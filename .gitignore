@@ -1,5 +1,5 @@
 /node_modules/
-/public/hot/
+/public/hot
 /public/storage/
 /storage/*.key
 /vendor
@@ -13,7 +13,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-bootstrap/
+bootstrap
 config
 tests/
 vendor/
