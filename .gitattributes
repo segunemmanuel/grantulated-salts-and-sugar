@@ -3,5 +3,5 @@
 *.scss linguist-vendored
 *.js linguist-vendored
 *.php linguist-vendored
-*.blade.php linguist-detectable=false
+*.blade linguist-detectable=false
 CHANGELOG.md export-ignore
