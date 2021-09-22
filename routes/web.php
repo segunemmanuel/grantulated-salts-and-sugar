@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,13 +36,14 @@ Route::get('/single_blog',[HomeController::class,'Single_blog'])->name('single_b
 
 
 // Admin routes
-Route::get('/admin', function () {
-    return view('admin.body.dashboard');
-});
 
-Route::get('/post_jobs', function () {
-    return view('admin.body.jobs.post_jobs');
-});
+Route::get('/dashboards',[AdminController::class,'Dashboard'])->name('dashs');
+Route::get('/add',[AdminController::class,'AddJob'])->name('add_jobs');
+Route::get('/add',[AdminController::class,'AddJob'])->name('add_jobs');
+
+
+
+
 
 
 

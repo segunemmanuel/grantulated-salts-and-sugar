@@ -23,9 +23,9 @@ class CreateJobsTable extends Migration
             $table->string('type');
             $table->decimal('salary',5,2);
             $table->integer('category_id');
-
             $table->SoftDeletes();
             $table->timestamps();
+            
         });
     }
 
