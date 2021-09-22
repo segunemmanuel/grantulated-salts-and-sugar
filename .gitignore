@@ -18,3 +18,8 @@ config
 tests/
 vendor/
 public/assets/
+public/asset/css/
+public/asset/data/
+public/asset/js/
+public/asset/plugins/
+public/asset/scss/

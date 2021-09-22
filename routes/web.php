@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,27 +18,32 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
+ 
 Route::get('/home', function () {
     return view('home.index');
 });
 
-Route::get('/about', function () {
-    return view('home.body.about');
+
+// Home page routes
+Route::get('/blog',[HomeController::class,'Blog'])->name('blog');
+Route::get('/listing',[HomeController::class,'Listing'])->name('listing');
+Route::get('/about',[HomeController::class,'About'])->name('about');
+Route::get('/contact',[HomeController::class,'Contact'])->name('contact');
+Route::get('/single_blog',[HomeController::class,'Single_blog'])->name('single_blog');
+
+
+
+// Admin routes
+Route::get('/admin', function () {
+    return view('admin.body.dashboard');
 });
 
-Route::get('/listing', function () {
-    return view('home.body.listing');
+Route::get('/post_jobs', function () {
+    return view('admin.body.jobs.post_jobs');
 });
 
 
 
-Route::get('/single_blog', function () {
-    return view('home.body.single_blog');
-});
-
-Route::get('/blog',[HomeController::class,Blog])->name('blog');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
