@@ -37,16 +37,27 @@
                         </a>
                       </li>
                     
-                      <li >
+                      <li>
                         <a class="sidenav-item-link" href="{{route('add_jobs')}}">
                           <span class="nav-text">Add new Jobs</span>
-                          
-                          <span class="badge badge-success">new</span>
-                          
                         </a>
                       </li>
                     
+
+                      <li>
+                        <a class="sidenav-item-link" href="{{route('add_category')}}">
+                          <span class="nav-text">Category</span>
+                        </a>
+                      </li>
+
+
+                      <li>
+                        <a class="sidenav-item-link" href="{{route('view.category')}}">
+                          <span class="nav-text">View Category</span>
+                        </a>
+                      </li>
                   
+                      
 
                   
                 </div>
@@ -55,10 +66,12 @@
 
           
 
+
+              
        
 
           
-        </ul>
+      
 
       </div>
 
