@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-
+ 
 class AdminController extends Controller
 {
     //
@@ -15,17 +15,16 @@ class AdminController extends Controller
     }
 
 
-
+ 
 
     public function StoreJobs(Request $request){
         $validated = $request->validate([
-            'title' => 'required|unique:jobs|max:255',
-            'description' => 'required',
-            'employer' => 'required',
-            'logo' => 'required',
-            'type' => 'required',
-            'salary' => 'required',
-            'category_id' => 'required',
+            'job_title' => 'required|unique:jobs|max:255',
+            'job_desc' => 'required',
+            'job_employer' => 'required',
+            'job_logo' => 'required',
+            'job_type' => 'required',
+            'job_salary' => 'required',
             'location' => 'required'
         ]);
 
@@ -33,4 +32,11 @@ class AdminController extends Controller
 
 
     }
+
+public function AddCat(){
+    return view('admin.body.category.add_category');
+}
+
+
+
 }

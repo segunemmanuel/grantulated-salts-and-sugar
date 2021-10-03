@@ -17,13 +17,9 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
- 
-Route::get('/home', function () {
     return view('home.index');
 });
+ 
 
 
 // Home page routes
@@ -36,13 +32,10 @@ Route::get('/single_blog',[HomeController::class,'Single_blog'])->name('single_b
 
 
 // Admin routes
-
 Route::get('/dashboards',[AdminController::class,'Dashboard'])->name('dashs');
 Route::get('/add',[AdminController::class,'AddJob'])->name('add_jobs');
-Route::get('/add',[AdminController::class,'AddJob'])->name('add_jobs');
-
-
-
+Route::get('/store',[AdminController::class,'StoreJobs'])->name('add_jobs');
+Route::get('/add_category',[AdminController::class,'AddCat'])->name('add_category');
 
 
 

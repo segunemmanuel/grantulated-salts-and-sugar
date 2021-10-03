@@ -141,6 +141,8 @@
 
        @yield('dash')
        @yield('post_jobs')
+@yield('post_cat')
+
 
 </div>
 						</div>

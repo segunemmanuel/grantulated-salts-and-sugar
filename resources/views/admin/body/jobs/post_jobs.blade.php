@@ -16,9 +16,8 @@
     <div class="row">
         <div class="col-md-8">
 
-        
-
 <form action="{{url('store.jobs')}}" method="POST">
+    @csrf
     <div class="form-group">
         <label for="my-input">Title</label>
         <input id="my-input" class="form-control" name="job_title" type="text">
