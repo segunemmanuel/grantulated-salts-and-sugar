@@ -4,10 +4,8 @@
 <div class="jumbotron">
     <div class="container">
         
-    <h1 class="display-4">Add jobs here</h1>
-    <p class="lead">For your users</p>
-    <hr class="my-4">
-    <p>Content</p>
+    <h4 class="text-center">Add jobs here</h4>
+ 
 
 </div>
 </div>
@@ -38,7 +36,11 @@
     </div>
     <div class="form-group">
         <label for="my-input">Category</label>
-        <input id="my-input" name="job_category" class="form-control" type="text">
+        <select  class="form-control" id="">
+            @foreach ($categories as $cat)
+            <option name="function_count[{!! $cat->id !!}]">{{$cat->title}}</option>
+            @endforeach
+        </select>
     </div>
 
     

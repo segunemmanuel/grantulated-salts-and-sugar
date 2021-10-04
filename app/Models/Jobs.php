@@ -19,5 +19,11 @@ class Jobs extends Model
         'salary',
         'category_id',
 
+
     ];
+    // Relating tables to other
+    public function jobs(){
+        return $this->hasOne(Category::class,'id', 'category_id');
+
+    }
 }

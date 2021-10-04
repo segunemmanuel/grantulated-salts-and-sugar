@@ -2,8 +2,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Jobs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Input\Input;
+
+
 
 class AdminController extends Controller
 {
@@ -14,7 +19,8 @@ class AdminController extends Controller
     }
 
     public function AddJob(){
-        return view('admin.body.jobs.post_jobs');
+    $categories=DB::table('categories')->get();
+        return view('admin.body.jobs.post_jobs',compact('categories'));
     }
 
 
@@ -28,9 +34,23 @@ class AdminController extends Controller
             'job_logo' => 'required',
             'job_type' => 'required',
             'job_salary' => 'required',
-            'location' => 'required'
+            'location' => 'required',
+            'job_category'=>'required'
+
         ]);
 
+
+Jobs::insert([
+'title'=>$request->job_title,
+'description'=>$request->job_desc,
+'employer'=>$request->job_employer,
+'logo'=>$request->job_logo,
+'location'=>$request->location,
+'type'=>$request->type,
+'salary'=>$request->salary,
+'category_id'=>$request->input('function_count')
+
+]);
 
 
 

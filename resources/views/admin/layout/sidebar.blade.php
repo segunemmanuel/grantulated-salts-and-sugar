@@ -38,7 +38,7 @@
                       </li>
                     
                       <li>
-                        <a class="sidenav-item-link" href="{{route('add_jobs')}}">
+                        <a class="sidenav-item-link" href="{{route('store.job')}}">
                           <span class="nav-text">Add new Jobs</span>
                         </a>
                       </li>
