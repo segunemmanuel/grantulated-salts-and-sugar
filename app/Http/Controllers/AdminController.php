@@ -39,13 +39,13 @@ class AdminController extends Controller
 
 Jobs::insert([
 'title'=>$request->job_title,
-// 'description'=>$request->job_desc,
-// 'employer'=>$request->job_employer,
-// 'logo'=>$request->job_logo,
-// 'location'=>$request->location,
-// 'type'=>$request->job_type,
-// 'salary'=>$request->job_salary,
-// 'category_id'=>$request->input('function_count'),
+'description'=>$request->job_desc,
+'employer'=>$request->job_employer,
+'logo'=>$request->job_logo,
+'location'=>$request->location,
+'type'=>$request->job_type,
+'salary'=>$request->job_salary,
+'category_id'=>$request->input('function_count'),
 // 'created_at'=> Carbon::now()
 
 ]);

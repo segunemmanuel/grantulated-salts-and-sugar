@@ -15,14 +15,14 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('description',225);
-            $table->string('employer');
-            $table->string('logo');
-            $table->string('location');
-            $table->string('type');
-            $table->decimal('salary',5,2);
-            $table->integer('category_id');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->string('employer')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('location')->nullable();
+            $table->string('type')->nullable();
+            $table->decimal('salary',5,2)->nullable();
+            $table->integer('category_id')->nullable();
             $table->SoftDeletes();
             $table->timestamps();
             

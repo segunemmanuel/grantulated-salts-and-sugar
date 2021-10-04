@@ -40,21 +40,25 @@
 
     <div class="form-group">
         <label for="my-input">Employer logo</label>
-<input type="file" name="job_logo" class="form-control">
+<input type="text" name="job_logo" class="form-control">
     </div>
     <div class="form-group">
         <label for="my-input">Location</label>
         <input id="my-input" name="job_location" class="form-control" type="text">
     </div>
-    <div class="form-group">
+    {{-- <div class="form-group">
         <label for="my-input">Category</label>
         <select  class="form-control" id="">
             @foreach ($categories as $cat)
             <option name="function_count[{!! $cat->id !!}]">{{$cat->title}}</option>
             @endforeach
         </select>
-    </div>
+    </div> --}}
 
+    <div class="form-group">
+        <label for="my-input">Cat</label>
+        <input id="my-input" class="form-control" type="text" name="category_id">
+    </div>
     
     <div class="form-group">
         <label for="my-input">Type</label>
