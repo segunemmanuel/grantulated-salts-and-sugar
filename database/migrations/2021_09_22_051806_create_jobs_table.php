@@ -26,7 +26,7 @@ class CreateJobsTable extends Migration
             $table->SoftDeletes();
             $table->timestamps();
             
-        });
+        });  
     }
 
     /**
