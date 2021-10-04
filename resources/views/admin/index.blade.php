@@ -144,6 +144,9 @@
 @yield('post_cat')
 @yield('view_cat')
 
+@yield('edit_cat')
+
+
 
 
 </div>

@@ -26,12 +26,14 @@
                     <th scope="col">Category Title</th>
                     <th scope="col">Date</th>
                     <th scope="col">Image</th>
+                    <th scope="col">Action</th>
+
                   </tr>
                 </thead>
                 <tbody>
                     @foreach ( $categories as $category )
                   <tr>
-                    <th scope="row">1</th>
+                    <th scope ="row"> {{ $categories->firstItem()+ $loop->index}}</th>
                     <td>{{$category->title}}</td>
                     <td>
                         @if($category->created_at==NULL)
@@ -42,8 +44,11 @@
                         </td>
                         
                     <td><img src="{{asset( $category->image )}}" width="90px" height="60px" alt=""></td>
-                  
-                    <td>@mdo</td>
+                </td>
+                <td><a href="{{url('category/edit/'.$category->id)}}" class="btn btn-info">Edit</a> 
+                <a href="{{url('category/delete/'.$category->id)}}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
+                
+                </td> 
                   </tr>
                   @endforeach
 

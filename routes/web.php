@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use Illuminate\Support\Facades\DB;
+
 
 
 /*
@@ -17,7 +19,9 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', function () {
-    return view('home.index');
+
+    $categories=DB::table('categories')->get();
+    return view('home.index',compact('categories'));
 });
  
 
@@ -38,6 +42,10 @@ Route::get('/store',[AdminController::class,'StoreJobs'])->name('add_jobs');
 Route::get('/add_category',[AdminController::class,'AddCat'])->name('add_category');
 Route::post('/store.category',[AdminController::class,'StoreCat'])->name('store.category');
 Route::get('/view_category',[AdminController::class,'ViewCat'])->name('view.category');
+Route::get('/category/delete/{id}',[AdminController::class,'DelCat']);
+Route::get('/category/edit/{id}',[AdminController::class,'EditCat']);
+
+
 
 
 

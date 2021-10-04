@@ -46,7 +46,7 @@
 
                       <li>
                         <a class="sidenav-item-link" href="{{route('add_category')}}">
-                          <span class="nav-text">Category</span>
+                          <span class="nav-text">Add Category</span>
                         </a>
                       </li>
 

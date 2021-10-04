@@ -54,7 +54,7 @@ public function StoreCat(Request $request){
     // Upload images
     $cat_image=$request->file('cat_image');
     $name_generate=hexdec(uniqid()). '.'.$cat_image->getClientOriginalExtension();
-    $destinationPath = base_path('public/cat/images/');
+    $destinationPath = base_path('public');
 $cat_image->move($destinationPath, $name_generate);
 
     Category::insert([
@@ -63,7 +63,7 @@ $cat_image->move($destinationPath, $name_generate);
         'created_at'=> Carbon::now()
     ]);
 
-    return Redirect()->back()->with('success','Inserted succesffully');
+    return Redirect()->route('view.category')->with('success','Inserted succesffully');
 
 
 
@@ -73,4 +73,17 @@ public function ViewCat(){
     $categories=Category::latest()->paginate(5);
     return view('admin.body.category.view_category',compact('categories'));
 }
+public function DelCat($id){
+    Category::find($id)->delete();
+return Redirect()->back()->with('success','Deleted  succesfully');
+
+
+}
+
+
+public function EditCat($id){
+    $categories=Category::find($id);
+    return view('admin.body.category.edit_category',compact('categories'));
+}
+
 }
