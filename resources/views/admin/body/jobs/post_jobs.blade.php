@@ -10,6 +10,18 @@
 </div>
 </div>
 
+<div class="card">
+    <div class="card">
+        @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong> {{ session('success')}}</strong> 
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        @endif
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -57,19 +69,11 @@
         <label for="my-input">Salary</label>
         <input id="my-input" name="job_salary" class="form-control" type="text">
     </div>
-
-
-    
     <div class="form-group">
         <label for="my-input">Employer</label>
         <input id="my-input" name="job_employer" class="form-control" type="text">
     </div>
-
-
     <input type="submit" name="submit" class="btn btn-primary" id="">
-
-
-
 </form>        
     </div>
 </div>

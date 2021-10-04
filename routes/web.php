@@ -38,7 +38,9 @@ Route::get('/single_blog',[HomeController::class,'Single_blog'])->name('single_b
 // Admin routes
 Route::get('/dashboards',[AdminController::class,'Dashboard'])->name('dashs');
 Route::get('/add',[AdminController::class,'AddJob'])->name('store.job');
-Route::get('/store/job',[AdminController::class,'StoreJobs'])->name('store_jobs');
+
+Route::post('/store.jobs',[AdminController::class,'StoreJobs']);
+
 Route::get('/add_category',[AdminController::class,'AddCat'])->name('add_category');
 Route::post('/store.category',[AdminController::class,'StoreCat'])->name('store.category');
 Route::get('/view_category',[AdminController::class,'ViewCat'])->name('view.category');

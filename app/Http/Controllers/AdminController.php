@@ -24,34 +24,33 @@ class AdminController extends Controller
     }
 
 
- 
-
     public function StoreJobs(Request $request){
-        $validated = $request->validate([
-            'job_title' => 'required|unique:jobs|max:255',
-            'job_desc' => 'required',
-            'job_employer' => 'required',
-            'job_logo' => 'required',
-            'job_type' => 'required',
-            'job_salary' => 'required',
-            'location' => 'required',
-            'job_category'=>'required'
+        // $validated = $request->validate([
+        //     'job_title' => 'required',
+        //     'job_desc' => 'required',
+        //     'job_employer' => 'required',
+        //     'job_logo' => 'required',
+        //     'job_type' => 'required',
+        //     'job_salary' => 'required',
+        //     'location' => 'required',
+        //     'job_category'=>'required'
 
-        ]);
-
+        // ]);
 
 Jobs::insert([
 'title'=>$request->job_title,
-'description'=>$request->job_desc,
-'employer'=>$request->job_employer,
-'logo'=>$request->job_logo,
-'location'=>$request->location,
-'type'=>$request->type,
-'salary'=>$request->salary,
-'category_id'=>$request->input('function_count')
+// 'description'=>$request->job_desc,
+// 'employer'=>$request->job_employer,
+// 'logo'=>$request->job_logo,
+// 'location'=>$request->location,
+// 'type'=>$request->job_type,
+// 'salary'=>$request->job_salary,
+// 'category_id'=>$request->input('function_count'),
+// 'created_at'=> Carbon::now()
 
 ]);
 
+return Redirect()->back()->with('success','inserted succesfully');
 
 
     }
